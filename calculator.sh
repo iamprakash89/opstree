@@ -20,7 +20,9 @@ case $3 in
         ;;
    3)
         echo "I'll multiply $no1 & $no2"
-	      mul
+	     
+        ans=$(( $no1 * $no2 ))
+        echo $ans
         ;;   
    4)
         echo "I'll divide $no1 & $no2"
