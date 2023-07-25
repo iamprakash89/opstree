@@ -8,19 +8,16 @@ case $3 in
    1)
 	      echo "I'll add $no1 & $no2"
 	      echo "adding a additon"
-        add
+	      add=$(( $1 +$2 ))
+	     echo "The addition is $add" 
         ;;
    2)
         echo "I'll substract $no1 & $no2"
-	adding new lin for testing with main
-	adding one more line to check
-	      sub
-	sub=$(( $1 - $2 ))
+	    sub=$(( $1 - $2 ))
 	    echo "the sub is $sub"
         ;;
    3)
         echo "I'll multiply $no1 & $no2"
-	      mul
         ;;   
    4)
         echo "I'll divide $no1 & $no2"
