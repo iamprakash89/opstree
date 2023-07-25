@@ -9,6 +9,7 @@ case $3 in
 	      echo "I'll add $no1 & $no2"
 	      echo "adding a additon"
 	      add=$(( $1 +$2 ))
+       echo "conflict test"
 	     echo "The addition is $add" 
         ;;
    2)
@@ -24,7 +25,8 @@ case $3 in
    4)
         echo "I'll divide $no1 & $no2"
 	div=$(( $1 % $2 )) 
-            echo "result is $div it may be correct or not"
+            echo "result is $div it may be correct or not i    "
+	    echo "I am  a new line added"
         ;;
    *)   echo "invalid inputes"
 	;;
