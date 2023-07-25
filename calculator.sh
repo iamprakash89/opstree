@@ -12,6 +12,7 @@ case $3 in
         ;;
    2)
         echo "I'll substract $no1 & $no2"
+	adding new lin
 	      sub
         ;;
    3)
