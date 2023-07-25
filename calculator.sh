@@ -6,15 +6,16 @@ operation=$3
 
 case $3 in
    1)
-	echo "I'll add $no1 & $no2"
-	add=$(($1 + $2 ))
-	echo "the sum is $add"
+	      echo "I'll add $no1 & $no2"
+        add
         ;;
    2)
         echo "I'll substract $no1 & $no2"
 	adding new lin for testing with main
 	adding one more line to check
 	      sub
+	sub=$(( $1 - $2 ))
+	    echo "the sub is $sub"
         ;;
    3)
         echo "I'll multiply $no1 & $no2"
