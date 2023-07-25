@@ -24,7 +24,7 @@ case $3 in
    4)
         echo "I'll divide $no1 & $no2"
 	div=$(( $1 % $2 )) 
-            echo "result is $div"
+            echo "result is $div it may be correct or not"
         ;;
    *)   echo "invalid inputes"
 	;;
