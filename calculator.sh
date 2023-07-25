@@ -12,7 +12,7 @@ case $3 in
         ;;
    2)
         echo "I'll substract $no1 & $no2"
-	adding new lin for testing
+	adding new lin for testing with main
 	      sub
         ;;
    3)
