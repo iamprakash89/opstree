@@ -11,13 +11,8 @@ case $3 in
         ;;
    2)
         echo "I'll substract $no1 & $no2"
-<<<<<<< HEAD
 	sub=$(( $1 - $2 ))
 	    echo "the sub is $sub"
-=======
-	adding new lin
-	      sub
->>>>>>> development
         ;;
    3)
         echo "I'll multiply $no1 & $no2"
