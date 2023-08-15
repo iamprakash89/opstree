@@ -23,6 +23,7 @@ case $3 in
         ;;
    *)   echo "invalid inputes"
         echo "post build actions"
+	echo "Ne lined added for testing"
 	;;
 
 esac
