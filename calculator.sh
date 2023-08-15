@@ -22,6 +22,7 @@ case $3 in
 	      div
         ;;
    *)   echo "invalid inputes"
+        echo "post build actions"
 	;;
 
 esac
