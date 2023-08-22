@@ -25,7 +25,7 @@ pipeline {
         stage('Execute Calculator') {
             steps {
                 script {
-                    sh './calculator.sh' // Modify the path as needed
+                    sh calculator.sh // Modify the path as needed
                 }
             }
         }
