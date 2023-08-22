@@ -25,7 +25,9 @@ pipeline {
         stage('Execute Calculator') {
             steps {
                 script {
-                    sh calculator.sh // Modify the path as needed
+                    def scriptPath = './calculator.sh'
+                    sh "chmod +x ${scriptPath}" // Grant execute permissions
+                    sh "${scriptPath}" // Execute the script
                 }
             }
         }
