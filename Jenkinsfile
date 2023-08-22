@@ -9,8 +9,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    echo "Checking out branch: ${BRANCH_NAME}"
-                    checkout([$class: 'GitSCM', branches: [[name: "*/${BRANCH_NAME}"]], userRemoteConfigs: [[url: 'https://github.com/iamprakash89/opstree.git']]])
+                    echo "Checking out branch: ${env.BRANCH_NAME}"
+                    checkout([$class: 'GitSCM', branches: [[name: "*/${env.BRANCH_NAME}"]], userRemoteConfigs: [[url: 'https://github.com/iamprakash89/opstree.git']]])
                 }
             }
         }
