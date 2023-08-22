@@ -1,28 +1,33 @@
 pipeline {
     agent any
     
-    environment {
-        JOB_BRANCH = env.BRANCH_NAME ?: 'main' // Use 'main' as default branch
-    }
-    
     stages {
-        stage('Checkout') {
+        stage('Setup') {
             steps {
                 script {
-                    echo "Checking out branch: ${JOB_BRANCH}"
-                    checkout([$class: 'GitSCM', branches: [[name: "*/${JOB_BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/iamprakash89/opstree.git']]])
+                    def branchName = env.JOB_NAME.split('-')[0] ?: 'main'
+                    echo "Using branch name: ${branchName}"
+                    
+                    env.BRANCH_NAME = branchName
                 }
             }
         }
         
-        stage('Get Branches') {
+        stage('Checkout') {
             steps {
                 script {
-                    def branches = sh(script: 'git ls-remote --heads origin | cut -f2 | sed "s#refs/heads/##"', returnStdout: true).trim().split('\n')
-                    echo "List of branches:"
-                    branches.each { branch ->
-                        echo "- $branch"
-                    }
+                    echo "Checking out branch: ${env.BRANCH_NAME}"
+                    checkout([$class: 'GitSCM', branches: [[name: "*/${env.BRANCH_NAME}"]], userRemoteConfigs: [[url: 'https://github.com/iamprakash89/opstree.git']]])
+                }
+            }
+        }
+        
+        stage('Execute Calculator') {
+            steps {
+                script {
+                    def scriptPath = './calculator.sh'
+                    sh "chmod +x ${scriptPath}" // Grant execute permissions
+                    sh "${scriptPath}" // Execute the script
                 }
             }
         }
