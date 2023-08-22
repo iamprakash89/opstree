@@ -25,6 +25,7 @@ pipeline {
         stage('Execute Calculator') {
             steps {
                 script {
+                    chmod +x calculator.sh
                     sh './calculator.sh' // Modify the path as needed
                 }
             }
