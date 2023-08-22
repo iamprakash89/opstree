@@ -1,11 +1,18 @@
 pipeline {
     agent any
     
-    environment {
-        BRANCH_NAME = env.JOB_NAME.split('-')[0] ?: 'main'
-    }
-    
     stages {
+        stage('Setup') {
+            steps {
+                script {
+                    def branchName = env.JOB_NAME.split('-')[0] ?: 'main'
+                    echo "Using branch name: ${branchName}"
+                    
+                    env.BRANCH_NAME = branchName
+                }
+            }
+        }
+        
         stage('Checkout') {
             steps {
                 script {
