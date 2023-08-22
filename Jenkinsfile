@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        JOB_BRANCH = env.BRANCH_NAME ?: 'main' // Use 'main' as default branch
+        JOB_BRANCH = env.BRANCH_NAME ?: "main" // Use 'main' as default branch
     }
     
     stages {
